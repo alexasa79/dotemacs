@@ -10,8 +10,11 @@
 (setq backup-directory-alist `(("." . "~/.saves")))
 (setq backup-by-copying t)
 
-(global-set-key (kbd "<C-prior>") 'next-buffer)
-(global-set-key (kbd "<C-next>") 'previous-buffer)
-(global-set-key (kbd "C-b") 'ibuffer)
 (global-set-key (kbd "C-z") 'undo)
 (global-set-key (kbd "C-S-z") 'redo)
+
+(require 'ido)
+(ido-mode t)
+
+(global-set-key (kbd "C-.") 'find-tag)
+(global-set-key (kbd "C-,") 'pop-tag-mark)
