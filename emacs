@@ -18,3 +18,9 @@
 
 (global-set-key (kbd "C-.") 'find-tag)
 (global-set-key (kbd "C-,") 'pop-tag-mark)
+
+(setq tramp-ssh-controlmaster-options
+      (concat
+        "-o ControlPath=/tmp/%h_%p_%r_ssh_mux "
+        "-o ControlMaster=auto"))
+
