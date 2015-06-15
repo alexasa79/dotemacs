@@ -29,4 +29,7 @@
         "-o ControlPath=/tmp/%h_%p_%r_ssh_mux "
         "-o ControlMaster=auto"))
 
+(custom-set-variables
+ '(initial-frame-alist (quote ((fullscreen . maximized)))))
+
 
