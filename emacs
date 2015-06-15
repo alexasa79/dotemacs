@@ -19,6 +19,9 @@
 (cua-mode t)
 (linum-mode t)
 
+; Make org mode support shift-select
+(setq org-replace-disputed-keys t)
+
 (global-set-key (kbd "C-.") 'find-tag)
 (global-set-key (kbd "C-,") 'pop-tag-mark)
 
@@ -32,4 +35,6 @@
 (custom-set-variables
  '(initial-frame-alist (quote ((fullscreen . maximized)))))
 
-
+(setq package-archives '(("gnu" . "http://elpa.gnu.org/packages/")
+                         ("marmalade" . "https://marmalade-repo.org/packages/")
+                         ("melpa" . "http://melpa.org/packages/")))
