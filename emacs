@@ -1,6 +1,6 @@
 (setq-default c-basic-offset 4
               tab-width 4
-              indent-tabs-mode t)
+              indent-tabs-mode nil)
 
 (setq mouse-wheel-scroll-amount '(1 ((shift) . 1))) ;; one line at a time
 (setq mouse-wheel-progressive-speed nil) ;; don't accelerate scrolling
@@ -12,12 +12,16 @@
 
 (global-set-key (kbd "C-z") 'undo)
 (global-set-key (kbd "C-S-z") 'redo)
+(global-set-key (kbd "C-o") 'ace-window)
+(global-set-key (kbd "C-.") 'find-tag)
+(global-set-key (kbd "C-,") 'pop-tag-mark)
 
-(require 'ido)
-(ido-mode t)
+;;(require 'ido)
+;;(ido-mode t)
 
 (cua-mode t)
 (linum-mode t)
+(global-linum-mode)
 
 ; Make org mode support shift-select
 (setq org-replace-disputed-keys t)
@@ -25,12 +29,16 @@
 (global-set-key (kbd "C-.") 'find-tag)
 (global-set-key (kbd "C-,") 'pop-tag-mark)
 
+(setenv "MANWIDTH" "72")
+
 (global-set-key (kbd "C-w") 'kill-this-buffer)
 
-(setq tramp-ssh-controlmaster-options
-      (concat
-        "-o ControlPath=/tmp/%h_%p_%r_ssh_mux "
-        "-o ControlMaster=auto"))
+(setq tramp-default-method "ssh")
+;;(setq tramp-ssh-controlmaster-options
+;;      (concat
+;;        "-o ControlPath=/tmp/%h_%p_%r_ssh_mux "
+;;        "-o ControlMaster=auto"))
+
 
 (custom-set-variables
  '(initial-frame-alist (quote ((fullscreen . maximized)))))
